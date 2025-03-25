@@ -74,7 +74,7 @@
 
 .card {
   background-color: var(--element-background);
-  border: 2px solid var(--accent-color); 
+  border: 2px solid var(--accent-color);
 }
 
 .card__header {
@@ -157,7 +157,7 @@
 }
 
 .card__section-text {
-  padding: 30px 25px 0; 
+  padding: 30px 25px 0;
 }
 
 .card__text {
@@ -360,5 +360,5 @@
   .dialog__button {
     inline-size: 257px;
     block-size: 40px;
-  } 
+  }
 }
