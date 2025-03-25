@@ -1,15 +1,3 @@
-/* stylelint-disable property-no-unknown */
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
 .page {
   display: flex;
   flex-direction: column;
@@ -237,6 +225,7 @@
   block-size: 193px;
   padding: 30px;
   border: 2px solid var(--accent-color);
+  overflow: hidden;
 }
 
 .dialog[open] .dialog__text {
@@ -245,6 +234,13 @@
   grid-template-columns: auto 3fr;
   align-items: center;
   gap: 20px;
+}
+
+.save-button .save-button__svg {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  filter: brightness(0) invert(1);
 }
 
 .dialog[open] .save-button__svg {
@@ -262,7 +258,6 @@
   inline-size: 293px;
   block-size: 40px;
 }
-
 
 .button {
   position: relative;
@@ -287,34 +282,15 @@
   translate: 0;
 }
 
-.save-button .save-button__svg {
-  position: relative;
-  z-index: 1;
-  mix-blend-mode: difference;
-  filter: brightness(0) invert(1);
-}
-
-
-
-
 .card__icon-button {
   border: 2px solid transparent;
-  block-size: 37px;
+  block-size: 38px;
 }
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--accent-color);
   transition: border 0.3s ease;
 }
-
-
-
-
-
-
-
-
-
 
 @media (width <= 375px) {
 
