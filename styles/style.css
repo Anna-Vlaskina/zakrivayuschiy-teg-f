@@ -266,10 +266,10 @@
 
 .button {
   position: relative;
+  overflow: hidden;
 }
 
-.button:focus {
-  outline: none;
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
   transition: box-shadow 0.3s ease;
 }
@@ -278,22 +278,41 @@
   content: '';
   position: absolute;
   inset: 0;
-  inline-size: 0%;
-  block-size: 100%;
   background-color: var(--accent-color);
-  transition: inline-size 0.5s ease-in-out;
+  translate: -100%;
+  transition: translate 0.5s ease-in-out;
 }
 
 .button:hover::after {
-  inline-size: 100%;
+  translate: 0;
 }
 
-/* .page:has(.button:hover::after) .save-button__svg_difference {
+.save-button .save-button__svg {
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
-  fill: currentColor;
-} */
+  filter: brightness(0) invert(1);
+}
+
+
+
+
+.card__icon-button {
+  border: 2px solid transparent;
+  block-size: 37px;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  transition: border 0.3s ease;
+}
+
+
+
+
+
+
+
 
 
 
