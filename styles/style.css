@@ -87,58 +87,55 @@
   font-variation-settings: 'wght' var(--card-weight-title);
 }
 
-.card__picture {
+.card__picture_container {
   display: flex;
   justify-content: end;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   block-size: var(--picture-size);
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
 }
 
+.card__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .card__picture_start {
-  background-image: url(../images/content/start.jpg);
   filter: brightness(120%) contrast(150%) saturate(20%);
 }
 
 .card__picture_first-sprint {
-  background-image: url(../images/content/first-sprint.jpg);
   filter: hue-rotate(-25deg) sepia(30%);
 }
 
 .card__picture_first-sprint-continuation {
-  background-image: url(../images/content/first-sprint-continuation.jpg);
   filter: grayscale(100%);
 }
 
 .card__picture_second-sprint {
-  background-image: url(../images/content/second-sprint.jpg);
   filter: opacity(70%) contrast(150%) brightness(120%);
 }
 
 .card__picture_second-sprint-continuation {
-  background-image: url(../images/content/second-sprint-continuation.jpg);
   filter: blur(0.1rem);
 }
 
 .card__picture_third-sprint {
-  background-image: url(../images/content/third-sprint.jpg);
   filter: grayscale(100%) brightness(80%);
 }
 
 .card__picture_third-sprint-continuation {
-  background-image: url(../images/content/third-sprint-continuation.jpg);
   filter: invert(10%);
 }
 
 .card__picture_now {
-  background-image: url(../images/content/now.jpg);
   filter: sepia(40%) contrast(90%);
 }
 
 .label {
+  position: absolute;
   font-family: var(--accent-font);
   font-size: 14px;
   font-weight: 400;
