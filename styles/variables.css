@@ -1,15 +1,15 @@
 :root {
   --font: 'Inter-Variable';
-  --accent-font: 'PressStart2P-Regular';
+  --accent-font: 'PressStart2P';
   --accent-color: #000;
   --card-weight-title: 700;
   --card-weight-text: 400;
-  --width: clamp(48.61vw, 48.61%, 700px);
-  --header-padding: clamp(2lh, 30%, 128px) clamp(2lh, 25%, 120.5px);
-  --heder-title-font-size: clamp(1em, 65px, 4.1rem);
-  --header-subtitle-font-size: clamp(0.5em, 23px, 1.5rem);
-  --picture-size: 696px;
-  --label-padding: 25px 25px 0 0;
+  --width: clamp(23.44rem, 50%, 43.75rem);
+  --header-padding: clamp(2lh, 30%, 128px) 0;
+  --heder-title-font-size: clamp(3.0625rem, 2.5rem + 1.8vw, 4.065rem);
+  --header-subtitle-font-size: clamp(0.875rem, 0.3rem + 1.8vw, 1.4375rem);
+  --picture-size: 700px;
+  --label-inset: 25px;
   --label-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
   --page-background: 
       repeating-linear-gradient(to right, #d3d3d3 2px, transparent 2px 4px, #d3d3d3 4px 6px),

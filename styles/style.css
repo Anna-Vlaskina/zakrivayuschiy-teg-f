@@ -4,7 +4,7 @@
   align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font, 'Inter-Variable', inter);
+  font-family: var(--font, 'Inter-Variable'), Arial, sans-serif;
   font-variation-settings: 'wght' var(--card-weight-text);
   background-image: var(--page-background);
   background-attachment: fixed;
@@ -19,9 +19,9 @@
   background-color: var(--element-background);
   border: 2px solid var(--accent-color);
   padding: var(--header-padding);
+  margin: 100px auto;
   margin-block-start: 100px;
   margin-block-end: 100px;
-  container-type: inline-size;
 }
 
 .header_width {
@@ -29,36 +29,24 @@
 }
 
 .header__title {
-  font-family: var( --accent-font);
+  font-family: var(--accent-font, 'PressStart2P'), 'Courier New', fantasy;
   font-weight: 400;
   font-size: var(--heder-title-font-size);
 }
 
 .header__subtitle {
-  font-family: var( --accent-font);
+  font-family: var(--accent-font, 'PressStart2P'), 'Courier New', fantasy;
   font-weight: 400;
   font-size: var(--header-subtitle-font-size);
   text-transform: uppercase;
   padding-block-start: 20px;
 }
 
-@container (inline-size < 1440px) {
-  
-  .header__title {
-    --heder-title-font-size: clamp(1.8rem, 20cqw, 65px);
-    font-size: var(--heder-title-font-size);
-  }
-  
-  .header__subtitle {
-  --header-subtitle-font-size: clamp(0.9rem, 10cqw, 23px);
-    font-size: var(--header-subtitle-font-size);
-  }
-}
-
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 }
 
 .cards {
@@ -82,15 +70,17 @@
 }
 
 .card__title {
-  font-family: var(--font);
+  font-family: var(--font, 'Inter-Variable'), Arial, sans-serif;
   font-size: 18px;
   font-variation-settings: 'wght' var(--card-weight-title);
 }
 
 .card__picture_container {
   display: flex;
-  justify-content: end;
-  block-size: var(--picture-size);
+  position: relative;
+  max-inline-size: 100%;
+  max-block-size: var(--picture-size);
+  overflow: hidden;
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
 }
@@ -102,45 +92,46 @@
   object-position: center;
 }
 
-.card__picture_start {
+.card__picture_saturate {
   filter: brightness(120%) contrast(150%) saturate(20%);
 }
 
-.card__picture_first-sprint {
+.card__picture_hue-rotate {
   filter: hue-rotate(-25deg) sepia(30%);
 }
 
-.card__picture_first-sprint-continuation {
+.card__picture_grayscale {
   filter: grayscale(100%);
 }
 
-.card__picture_second-sprint {
+.card__picture_opacity {
   filter: opacity(70%) contrast(150%) brightness(120%);
 }
 
-.card__picture_second-sprint-continuation {
+.card__picture_blur {
   filter: blur(0.1rem);
 }
 
-.card__picture_third-sprint {
+.card__picture_brightness {
   filter: grayscale(100%) brightness(80%);
 }
 
-.card__picture_third-sprint-continuation {
+.card__picture_invert {
   filter: invert(10%);
 }
 
-.card__picture_now {
+.card__picture_sepia {
   filter: sepia(40%) contrast(90%);
 }
 
 .label {
   position: absolute;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'PressStart2P'), 'Courier New', fantasy;
   font-size: 14px;
   font-weight: 400;
   text-shadow: var(--label-shadow);
-  padding: var(--label-padding);
+  inset-block-start: 25px;
+  inset-inline-end: var(--label-inset);
   filter: opacity(0.5);
 }
 
@@ -154,13 +145,14 @@
 }
 
 .card__section-text {
-  padding: 30px 25px 0;
+  padding: 25px 25px 0;
 }
 
 .card__text {
-  font-family: var(--font);
+  font-family: var(--font, 'Inter-Variable'), Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
+  line-height: 1.1666;
   padding-block-end: 26px;
 }
 
@@ -170,90 +162,6 @@
   gap: 6px;
   padding-inline-end: 25px;
   padding-block-end: 22px;
-}
-
-.card__like-button {
-  border: 2px solid var(--accent-color);
-  inline-size: 130px;
-  block-size: 38px;
-}
-
-.button__text {
-  position: relative;
-  mix-blend-mode: difference;
-  color: #fff;
-  z-index: 1;
-  font-family: var(--accent-font);
-  font-size: 14px;
-  font-weight: 400;
-  justify-self: start;
-}
-
-.footer {
-  padding-block-start: 50px;
-  padding-block-end: 103px;
-}
-
-.save-button {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 7fr;
-  place-items: center;
-  gap: 8px;
-  background-color: var(--element-background);
-  border: 2px solid var(--accent-color);
-  inline-size: 340px;
-  block-size: 55px;
-}
-
-.save-button__svg {
-  justify-self: end;
-}
-
-.dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.75);
-}
-
-.dialog[open] {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  inline-size: 357px;
-  block-size: 193px;
-  padding: 30px;
-  border: 2px solid var(--accent-color);
-  overflow: hidden;
-}
-
-.dialog[open] .dialog__text {
-  display: inline-grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: auto 3fr;
-  align-items: center;
-  gap: 20px;
-}
-
-.save-button .save-button__svg {
-  position: relative;
-  z-index: 1;
-  mix-blend-mode: difference;
-  filter: brightness(0) invert(1);
-}
-
-.dialog[open] .save-button__svg {
-  justify-self: start;
-  align-self: center;
-}
-
-.dialog[open] .button__text {
-  text-transform: uppercase;
-  line-height: 1.5;
-}
-
-.dialog__button {
-  border: 2px solid var(--accent-color);
-  inline-size: 293px;
-  block-size: 40px;
 }
 
 .button {
@@ -289,53 +197,143 @@
   transition: border 0.3s ease;
 }
 
+.card__like-button {
+  border: 2px solid var(--accent-color);
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.button-save {
+  padding-block-start: 50px;
+  padding-block-end: 103px;
+}
+
+.save-button {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 7fr;
+  place-items: center;
+  gap: 8px;
+  background-color: var(--element-background);
+  border: 2px solid var(--accent-color);
+  inline-size: 340px;
+  block-size: 55px;
+}
+
+.button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  color: #fff;
+  z-index: 1;
+  font-family: var(--accent-font, 'PressStart2P'), 'Courier New', fantasy;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2.3;
+  justify-self: start;
+}
+
+.save-button__svg {
+  justify-self: end;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  inline-size: 357px;
+  border: 2px solid var(--accent-color);
+  padding: 30px;
+}
+
+.dialog[open] .dialog__text {
+  display: inline-grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto 3fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.save-button .save-button__svg {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  filter: brightness(0) invert(1);
+}
+
+.dialog[open] .save-button__svg {
+  justify-self: start;
+  align-self: center;
+}
+
+.dialog[open] .button__text {
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.dialog__button {
+  border: 2px solid var(--accent-color);
+  inline-size: 293px;
+  block-size: 40px;
+}
+
 @media (width <= 375px) {
 
   .header {
-    --header-padding: clamp(2lh, 30%, 120px) clamp(0.3lh, 5%, 14px);
+    --header-padding: clamp(2lh, 35%, 120px) 0;
     padding: var(--header-padding);
   }
 
   .header_width {
-    --width: clamp(90vw, 100%, 375px);
+    --width: clamp(23.44rem, 100%, 375px);
     inline-size: var(--width);
   }
 
   .header__title {
-    --heder-title-font-size: clamp(1em, 49px, 3.1rem);
+    --heder-title-font-size: clamp(3.0625rem, 49px, 4.065rem);
     font-size: var(--heder-title-font-size);
   }
 
   .header__subtitle {
-    --header-subtitle-font-size: clamp(0.4em, 14px, 0.9rem);
+    --header-subtitle-font-size: clamp(0.875rem, 14px, 1.4375rem);
     font-size: var(--header-subtitle-font-size);
   }
 
   .cards {
-    --width: clamp(97vw, 100%, 375px);
+    --width: clamp(23.44rem, 100%, 375px);
     inline-size: var(--width);
   }
 
-  .card__picture {
+  .card__picture_container {
     --picture-size: 375px;
-    block-size: var(--picture-size);
+    max-block-size: var(--picture-size);
   }
 
   .label {
-    --label-padding: 25px 13px 0 0;
-    padding: var(--label-padding);
+    --label-inset: 13px;
+    inset-inline-end: var(--label-inset);
+  }
+
+  .card__section-text {
+    padding: 25px 25px 0;
   }
 
   .save-button {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
-    inline-size: 306px;
-    block-size: 80px;
+    gap: 0;
+    inline-size: 310px;
+    block-size: 85px;
   }
   
   .save-button__svg {
     justify-self: center;
     align-self: end;
+    width: 28px;
+    height: 28px;
   }
 
   .button__text_align {
@@ -345,7 +343,6 @@
 
  .dialog[open] {
     inline-size: 341px;
-    block-size: 191px;
     padding: 30px 35px;
   }
 
