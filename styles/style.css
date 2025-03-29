@@ -282,41 +282,6 @@
 
 @media (width <= 375px) {
 
-  .header {
-    --header-padding: clamp(2lh, 35%, 120px) 0;
-    padding: var(--header-padding);
-  }
-
-  .header_width {
-    --width: clamp(23.44rem, 100%, 375px);
-    inline-size: var(--width);
-  }
-
-  .header__title {
-    --heder-title-font-size: clamp(3.0625rem, 49px, 4.065rem);
-    font-size: var(--heder-title-font-size);
-  }
-
-  .header__subtitle {
-    --header-subtitle-font-size: clamp(0.875rem, 14px, 1.4375rem);
-    font-size: var(--header-subtitle-font-size);
-  }
-
-  .cards {
-    --width: clamp(23.44rem, 100%, 375px);
-    inline-size: var(--width);
-  }
-
-  .card__picture_container {
-    --picture-size: 375px;
-    max-block-size: var(--picture-size);
-  }
-
-  .label {
-    --label-inset: 13px;
-    inset-inline-end: var(--label-inset);
-  }
-
   .save-button {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;

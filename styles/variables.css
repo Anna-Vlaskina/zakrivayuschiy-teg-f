@@ -19,3 +19,34 @@
   --contour-color: #000;
   --animation-fill-color: #f00;
 }
+
+@media (width <= 375px) {
+
+  .header {
+    --header-padding: clamp(2lh, 35%, 120px) 0;
+  }
+
+  .header_width {
+    --width: clamp(23.44rem, 100%, 375px);
+  }
+
+  .header__title {
+    --heder-title-font-size: clamp(3.0625rem, 49px, 4.065rem);
+  }
+
+  .header__subtitle {
+    --header-subtitle-font-size: clamp(0.875rem, 14px, 1.4375rem);
+  }
+
+  .cards {
+    --width: clamp(23.44rem, 100%, 375px);
+  }
+
+  .card__picture_container {
+    --picture-size: 375px;
+  }
+
+  .label {
+    --label-inset: 13px;
+  }
+}
